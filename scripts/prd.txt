@@ -1,0 +1,125 @@
+# IdeaValidator - Product Requirements Document
+
+## Überblick
+
+Idea Validator ist ein AI-gestütztes Analyse-Tool für Gründer:innen, Startups und Acceleratoren. Es bewertet Businessideen anhand zentraler Kriterien wie Marktpotenzial, Zielgruppen-Fit, Trendrelevanz und technischer Umsetzbarkeit. Nutzer erhalten einen strukturierten Report, inklusive Scorecard, SWOT-Analyse, MVP-Vorschlägen und Handlungsempfehlungen. Ziel ist es, fundiertes Feedback für eine schnelle Validierung von Ideen bereitzustellen.
+
+## Kernfunktionen
+
+### 1. Scorecard-Analyse
+- Bewertet die Idee entlang von 10 Kategorien (Problem, Markt, USP, etc.) auf einer Skala von 0–10
+- Liefert quantifizierbares Feedback und Vergleichbarkeit zwischen Ideen
+- GPT analysiert den Text und generiert Scores mit Erklärungen
+
+### 2. SWOT-Analyse
+- Erstellt eine SWOT-Matrix basierend auf der Eingabe
+- Identifiziert strategische Chancen und Risiken
+- Prompt-Template für GPT erstellt automatisch vier Segmente
+
+### 3. MVP-Vorschläge & Roadmap
+- Gibt realistische MVP-Formate und eine Schritt-für-Schritt-Roadmap aus
+- Hilft bei schneller Validierung mit minimalem Aufwand
+- GPT generiert MVPs mit Aufwand, Tools, KPIs und Validierungsschritten
+
+### 4. Risikoanalyse
+- Erkennt potenzielle Risiken in mehreren Kategorien
+- Verhindert Blindspots vor Marktstart
+- GPT erstellt eine Risiko-Matrix inkl. Eintrittswahrscheinlichkeit und Gegenmaßnahmen
+
+### 5. "If I were you" GPT-Rollenanalyse
+- Simuliert Feedback aus Perspektiven wie VC, PM, Designer
+- Bietet mehrperspektivisches Feedback
+- GPT-Prompt mit Rollen-Perspektiven
+
+### 6. Export als Report
+- Export der Analyse als PDF oder in ein Notion-Template
+- Ermöglicht Weiterverwendung in Pitches oder zur Projektplanung
+- PDF-Renderer / Notion API
+
+## Nutzererfahrung
+
+### Personas
+- Anna (Gründerin): Hat eine Idee, aber keine Erfahrung in der Validierung
+- Max (Accelerator-Coach): Bewertet täglich neue Pitches
+- Jonas (No-Code-Maker): Will mit kleinem MVP schnell testen
+
+### User Flow
+1. Idee in Webformular eingeben
+2. Analyse starten
+3. Ergebnisse in strukturierter Ansicht sehen
+4. Report exportieren oder Validierungsplan umsetzen
+
+### UI/UX
+- Einfache, geführte Weboberfläche
+- Mobile responsive
+- Schrittweise Darstellung der Ergebnisse (Scorecard > SWOT > MVP)
+- Export-Buttons sichtbar & schnell zugänglich
+
+## Technische Architektur
+
+### Systemkomponenten
+- Frontend: Tally/Softr (MVP), später React/Next.js
+- API Gateway: Firebase Functions / Cloudflare Workers
+- Backend: Node.js oder Python (FastAPI), GPT-Module, Prompt Templates
+- LLM: GPT-4 (OpenAI API)
+- Database: Firebase/Supabase für Sessions & Reports
+- PDF Renderer: Puppeteer, html2pdf
+- Integrationen: Notion API, Mail API (später Slack, Zapier)
+
+### Datenmodell (vereinfacht)
+- User: id, email (optional)
+- Session: id, timestamp, input_text, result_blocks[], pdf_url
+- ReportBlock: type, content, score, metadata
+
+### CI/CD
+- GitHub + Vercel / Render
+- Automatische Tests (Prompt Output Snapshot, Linting)
+- Rollback-fähige Versionierung der Prompts & Reports
+
+## Entwicklungs-Roadmap
+
+### Phase 1: MVP
+- Eingabeformular mit Textfeld
+- GPT-Analyse mit Scorecard, SWOT, MVP, Risikoanalyse
+- PDF-Export der Ergebnisse
+- No-Code UI mit Tally/Softr
+- Report-Speicherung in Firebase / Supabase
+
+### Phase 2: Validierungs-Roadmap & Rollenfeedback
+- GPT generiert Validierungsplan
+- GPT generiert Feedback aus 3 gewählten Rollen
+- Historie der Analysen speichern
+
+### Phase 3: Export-Integrationen
+- Export in Notion-Datenbank
+- Mail-Report an Nutzer
+
+### Phase 4+: Skalierung & Advanced Features
+- Nutzer-Login / Accounts
+- Vergleich mehrerer Ideen
+- Team-Feedback-View (für Acceleratoren)
+- Trenddaten-Integration (Exploding Topics etc.)
+
+## Logische Abhängigkeitskette
+1. Basis: Eingabe + GPT-Ausgabe
+2. Darstellung: Scorecard + SWOT anzeigen
+3. Exportfunktion (PDF)
+4. MVP-Vorschläge + Risikomatrix
+5. Rollenfeedback & Validierungsplan (zusätzliche GPT-Prompts)
+6. Speicherung in DB / Historie
+7. Notion/Mail-Export
+8. Accountsystem & Vergleich
+
+## Risiken und Gegenmaßnahmen
+
+### Technische Herausforderungen
+- Prompt-Komplexität: Modularisierung der GPT-Aufrufe & Prompts (YAML/JSON Templates)
+- Antwortzeiten: Queue-Management oder Parallelisierung per Background Tasks
+
+### MVP-Scoping
+- Risiko: Zu viele Features auf einmal
+- Lösung: Fokus auf 3 Kernoutputs im MVP: Scorecard, SWOT, MVP-Vorschläge
+
+### Ressourcen
+- Risiko: Entwicklerzeit / GPT-Kosten
+- Lösung: Serverless Deployment + Caching der Ergebnisse + Testaccounts bei OpenAI 

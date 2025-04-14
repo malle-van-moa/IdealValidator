@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "generatedAt": "2025-04-14T20:57:26.375Z",
+    "tasksAnalyzed": 15,
+    "thresholdScore": 5,
+    "projectName": "Your Project Name",
+    "usedResearch": false
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Setup Project Repository & Base Infrastructure",
+      "complexityScore": 8,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down the repository setup task into subtasks covering: 1) repository initialization with proper structure, 2) Firebase/Supabase configuration for different environments, 3) CI/CD pipeline setup, 4) component diagrams creation, 5) workflow diagrams creation, and 6) database documentation and README preparation.",
+      "reasoning": "This task involves multiple technical domains (repository structure, cloud services, CI/CD, documentation) and requires architectural decision-making. The multilingual requirements and comprehensive documentation with various diagram types add complexity."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Implement Data Models & Database Schema",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the data modeling task into subtasks covering: 1) User model implementation with authentication fields, 2) Session model with relationships to other entities, 3) ReportBlock model with polymorphic structure for different analysis types, and 4) database migration scripts and indexing strategy.",
+      "reasoning": "This task requires database design expertise and understanding relationships between entities. The complexity comes from designing flexible schemas that can accommodate different report block types and ensuring proper indexing for performance."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Develop GPT Integration Service",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the GPT integration service into subtasks covering: 1) OpenAI API client implementation with authentication, 2) prompt template system architecture, 3) error handling and retry logic, 4) response validation and parsing, and 5) API usage tracking and optimization.",
+      "reasoning": "This task involves working with external APIs and requires robust error handling. Creating a modular prompt system adds complexity, as does implementing proper security for API keys and optimizing for cost/performance."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Create Scorecard Analysis Module",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the Scorecard Analysis module into subtasks covering: 1) prompt engineering for consistent 10-category evaluation, 2) response parsing to extract numerical scores and explanations, 3) validation logic to ensure complete scoring across all categories, and 4) data structure design for frontend rendering.",
+      "reasoning": "This task requires careful prompt engineering to ensure GPT consistently evaluates all 10 categories. The complexity comes from parsing structured data from GPT responses and implementing validation to handle edge cases."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Build SWOT Analysis Module",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the SWOT Analysis module into subtasks covering: 1) prompt engineering for balanced quadrant coverage, 2) response parsing to extract SWOT elements, 3) data structure design for matrix representation, and 4) integration with the main analysis flow.",
+      "reasoning": "This task is moderately complex, requiring prompt engineering to ensure balanced coverage across all SWOT quadrants. The parsing logic is simpler than the Scorecard as the structure is more defined."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Implement MVP Suggestions & Roadmap Module",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the MVP & Roadmap module into subtasks covering: 1) prompt engineering for structured MVP options, 2) prompt design for step-by-step roadmap generation, 3) response parsing for different MVP formats, 4) roadmap phase extraction and structuring, and 5) prioritization logic implementation.",
+      "reasoning": "This task has higher complexity due to the need for generating multiple MVP options and a structured roadmap with phases. The prompt needs to elicit specific details about implementation effort, tools, and KPIs, requiring sophisticated parsing."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Develop Risk Analysis Module",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the Risk Analysis module into subtasks covering: 1) prompt engineering for comprehensive risk identification across categories, 2) probability estimation and severity calculation, 3) response parsing for risk matrix generation, and 4) data structure design for risk sorting and filtering.",
+      "reasoning": "This task requires detailed prompt engineering to categorize risks and estimate probabilities. The complexity comes from structuring the risk matrix and implementing sorting/filtering capabilities."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Create Role-Based Feedback Module",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the Role-Based Feedback module into subtasks covering: 1) role persona development for different professional perspectives, 2) prompt engineering for role-specific analysis, 3) role selection UI components, 4) response attribution and formatting, and 5) integration with the main analysis flow.",
+      "reasoning": "This task has higher complexity due to the need to create distinct personas for different professional roles and ensure each provides unique, valuable feedback. The UI for role selection and response attribution adds additional complexity."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Implement PDF Export Functionality",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the PDF Export functionality into subtasks covering: 1) PDF generation library integration, 2) report template design with all analysis components, 3) server-side rendering implementation, 4) PDF storage and link generation, and 5) download functionality in the UI.",
+      "reasoning": "This task involves working with PDF generation libraries and designing templates that can accommodate various analysis components. Server-side rendering and storage add moderate complexity."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Develop Notion Export Integration",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the Notion Export integration into subtasks covering: 1) Notion API authentication flow, 2) Notion template design for analysis components, 3) data transformation logic for Notion blocks, 4) error handling and retry mechanisms, and 5) user account connection UI.",
+      "reasoning": "This task involves working with an external API (Notion) and requires implementing an authentication flow. The complexity comes from mapping analysis data to Notion's block structure and handling potential API limitations."
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "Build Web UI with React/Next.js",
+      "complexityScore": 8,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Break down the Web UI development into subtasks covering: 1) application scaffolding with Next.js, 2) component library and styling system setup, 3) idea input form implementation, 4) analysis results display components, 5) API integration services, and 6) responsive design implementation.",
+      "reasoning": "This task involves building a complete frontend application with multiple views and components. The complexity comes from ensuring responsive design, intuitive navigation, and proper API integration across all analysis types."
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "Implement Session Storage & History",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the Session Storage & History feature into subtasks covering: 1) session data model implementation in Firebase/Supabase, 2) API endpoints for session CRUD operations, 3) history view UI components, and 4) report regeneration functionality.",
+      "reasoning": "This task requires implementing database operations and API endpoints for session management. The complexity is moderate, focusing on data persistence and retrieval with basic management functions."
+    },
+    {
+      "taskId": 13,
+      "taskTitle": "Develop Email Report Delivery",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Break down the Email Report Delivery feature into subtasks covering: 1) email service integration, 2) email template design for reports, 3) triggering mechanisms (manual and automatic), and 4) email verification and subscription management.",
+      "reasoning": "This task involves integrating with email delivery services and creating templates. The complexity is moderate, with the main challenges being template design and proper delivery triggering."
+    },
+    {
+      "taskId": 14,
+      "taskTitle": "Create Admin Dashboard for Analytics",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the Admin Dashboard into subtasks covering: 1) analytics data collection and storage, 2) dashboard UI with key metrics visualization, 3) user management interface, 4) session browsing and review functionality, and 5) API usage monitoring and alerts.",
+      "reasoning": "This task requires building a separate administrative interface with analytics capabilities. The complexity comes from implementing visualizations, user management, and monitoring systems."
+    },
+    {
+      "taskId": 15,
+      "taskTitle": "Implement End-to-End Testing & Documentation",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the Testing & Documentation task into subtasks covering: 1) end-to-end test suite implementation, 2) GPT response snapshot testing, 3) API documentation creation, 4) user guide development for different audiences, and 5) monitoring and error reporting setup.",
+      "reasoning": "This task spans the entire system and requires expertise in testing methodologies and documentation standards. The complexity comes from creating comprehensive tests that cover all user flows and potential edge cases."
+    }
+  ]
+}
